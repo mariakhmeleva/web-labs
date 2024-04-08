@@ -5,6 +5,27 @@ body {
     margin: 0px;
 }
 
+a:link {
+    color:black;
+    text-decoration: none;
+    transition: 1s;
+}
+
+a:visited {
+    color: rgb(76, 60, 61);
+    text-decoration:color-mix(in hsl longer hue, color percentage, color percentage);
+}
+
+a:hover {
+    color: red;
+    text-decoration:underline;
+}
+
+a:active {
+    color: rgb(182, 92, 92);
+    text-decoration: underline;
+}
+
 header {
     background-color:burlywood;
     color: black;
