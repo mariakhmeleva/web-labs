@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <title>Хмелёва Мария. Позиционирование</title>
+    <style>
+        div {
+            width: 300px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            background-color: lightyellow;
+            border: 1px dotted darkblue;
+            margin: 15px;
+        }
+        div.position-relative {
+            position: relative;
+            left: 10%;
+            top: -130px;
+            z-index: -1; 
+        } 
+        div.position-relative:hover { 
+            z-index: 1; 
+        }
+        div.position-absolute {
+            position: absolute;
+            left: 350px;
+        }
+        div.position-absolute:hover {
+            transform: scale(1.1); 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+    
+    <main>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-relative">relative</div>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-absolute">absolute</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+    </main>
+</body>
+<footer>
+    &copy; Хмелёва Мария,ФБИ-23, 2 курс, 2024
+</footer>
+</html>
