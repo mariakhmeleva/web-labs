@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хмелёва Мария Сергеевна. Корзина</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon-32x32.png" type="image/png">
+    <link rel="shortcut icon" href="../favicon-16x16.png" type="image/png">
+    </head>
+    <body>
+    <script>
+        function showPrice(){
+            let output = document.getElementById('output');
+            let apple =  parseInt(document.getElementById('apple').value);
+            let orange =  parseInt(document.getElementById('orange').value);
+            let grusha =  parseInt(document.getElementById('grusha').value);
+            let melon =  parseInt(document.getElementById('melon').value);
+            let price = apple * 100 + orange * 150 + grusha * 80 + melon*300;
+            output.innerHTML = 'Итоговая стоимость '+ '\n' + price;
+        }
+        function showClear(){
+            document.getElementById('apple').value='0'
+            document.getElementById('orange').value='0'
+            document.getElementById('grusha').value='0'
+            document.getElementById('melon').value='0'
+            output.innerHTML = 'Итоговая стоимость ';
+        }
+    </script>
+    <style>
+        #output{
+            border: 1px solid;
+            width: 150px;
+            height: 50px;
+        }
+        .cart{
+            
+            display: inline-block;
+            width: 300px;
+            height: 350px;
+            line-height: 15px;
+            text-align: center;
+            background-color: rgb(182, 220, 157);
+            border: 1px dotted rgb(18, 48, 75);
+            margin: 10px;
+        }
+        label{
+            margin: 20px;
+            font-size: 15px;
+        }
+        div.but{
+            margin: 15px;
+            cursor: pointer;
+            width: 100px;
+            height: 20px;
+            line-height: 15px;
+            text-align: center;
+            background-color: rgb(23, 142, 19);
+            border: 1px dotted rgb(221, 225, 230);
+            color: rgb(12, 1, 1);
+        }
+        div.out{
+            margin: 10px;
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+
+
+    <header>
+    НГТУ, ФБ, Лабораторная работа 5
+    </header>
+    <main>
+        <div class="cart"><h1>Корзина товаров</h1>
+            <label>Яблоки (100р/шт): <input type="number" value="0" id="apple" min="0"></label><br>
+            <label>Груши (80р/шт): <input type="number" value="0" id="grusha" min="0"></label><br>
+            <label>Апельсины (150р/шт): <input type="number" value="0" id="orange" min="0"></label><br>
+            <label>Дыня (300р/шт): <input type="number" value="0" id="melon" min="0"></label><br>
+            <div class="but" onclick="showPrice()">Рассчитать</div>
+            <div class="but" onclick="showClear()">Очистить</div>
+            <div class="out" id="output">Итоговая стоимость</div>
+        </div>
+    </main>
+    
+
+<footer>
+    ©: Хмелёва Мария Сергеена, ФБИ-23, 2 курс, 2024
+</footer>
+</body></html>
