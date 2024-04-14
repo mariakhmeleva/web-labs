@@ -15,7 +15,15 @@
         let result = a + b;
         alert('Сумма '+ a +' и '+ b +' равна ' + result);
     }
+        function showAuthor() {
+        let author = 'Автор страницы: \nХмелёва Мария Сергеевна';
+        alert(author);
+        }
 
+        function hello() {
+        let hello = 'Добро пожаловать на мою страницу!';
+        alert(hello);
+        }
     </script>
     <style>
         .message {
@@ -27,6 +35,14 @@
             display: inline-block;
             text-align: center;
         }
+
+        header {
+            cursor: pointer;
+        }
+
+        footer {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -36,10 +52,10 @@
 
     <main>
         <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
-        <div class="message">Узнать кто автор страницы</div>
+        <div class="message" onclick="showAuthor()">Узнать кто автор страницы</div>
     </main>
 
-    <footer>
+    <footer ondblclick="hello()">
         &copy: Хмелёва Мария, ФБИ-23, 2 курс, 2024
     </footer>
 </body>
