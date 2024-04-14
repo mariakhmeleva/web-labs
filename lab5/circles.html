@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хмелёва Мария Сергеевна. Круги</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon-32x32.png" type="image/png" >
+    <link rel="shortcut icon" href="../favicon-16x16.png" type="image/png">
+    <style>
+        
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            text-align: center;
+            line-height: 100px;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.5s ease; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+    <main>
+
+        <div class="circle" style="background-color: #ff9999; top: 40px; left: 50px;">1</div>
+        <div class="circle" style="background-color: #99ff99; top: 150px; left: 150px;">2</div>
+        <div class="circle" style="background-color: #9999ff; top: 250px; left: 250px;">3</div>
+        <div class="circle" style="background-color: #e6d819; top: 350px; left: 350px;">4</div>
+        <div class="circle" style="background-color: #ef7c7c; top: 450px; left: 450px;">5</div>
+        <div class="circle" style="background-color: #0095ff; top: 550px; right: 850px;">6</div>
+        <div class="circle" style="background-color: #ffffff; top: 50px; right: 950px;">7</div>
+        <div class="circle" style="background-color: #df9ec3; top: 50px; right: 750px;">8</div>
+        <div class="circle" style="background-color: #e1a6d8; top: 100px; right: 850px;">9</div>
+        <div class="circle" style="background-color: #72d21d; top: 200px; right: 950px;">10</div>
+      
+        <button onclick="resetCircles()">Вернуть круги</button>
+    </main>
+    <footer>
+        &copy: Хмелёва Мария, ФБИ-23, 2 курс, 2024
+    </footer>
+
+    <script>
+        
+        function hideCircle(event) {
+            var circle = event.target;
+            circle.style.opacity = 0;
+            circle.style.width = '0px';
+            circle.style.height = '0px';
+        }
+
+        var circles = document.querySelectorAll('.circle');
+        circles.forEach(function(circle) {
+            circle.addEventListener('click', hideCircle);
+        });
+
+        
+        function resetCircles() {
+            circles.forEach(function(circle) {
+                circle.style.opacity = 1;
+                circle.style.width = '100px';
+                circle.style.height = '100px';
+            });
+        }
+    </script>
+</body>
+</html>
