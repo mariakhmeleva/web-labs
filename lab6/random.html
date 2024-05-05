@@ -8,6 +8,28 @@
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="../favicon-32x32.png" type="image/png" >
     <link rel="shortcut icon" href="../favicon-16x16.png" type="image/png">
+<style>
+    .help-block {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .help-block button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .help-block ol {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+</style>
 <script>
     let number;
     let count = 0
@@ -47,6 +69,24 @@
         document.getElementById('result').innerHTML = ''; // Очищаем блок "result"
         
     }
+
+    function showRules() {
+            let rulesButton = document.getElementById('rules-button');
+            let rulesText = document.getElementById('rules-text');
+
+            rulesButton.style.display = 'none';
+            rulesText.style.display = 'block';
+            document.getElementById('hide-rules-button').style.display = 'inline';
+        }
+
+        function hideRules() {
+            let rulesButton = document.getElementById('rules-button');
+            let rulesText = document.getElementById('rules-text');
+
+            rulesButton.style.display = 'inline';
+            rulesText.style.display = 'none';
+            document.getElementById('hide-rules-button').style.display = 'none';
+        }
     
 </script>
 </head>
@@ -82,6 +122,19 @@
                 <button onclick="again()">Сыграть еще раз</button>
             </div>
         </div>
+
+        <div class="help-block">
+            <button id="rules-button" onclick="showRules()">Показать правила игры</button>
+            <button id="hide-rules-button" style="display: none;" onclick="hideRules()">Скрыть правила игры</button>
+            <ol id="rules-text" style="display: none;">
+                <li>Загадывается случайное число от 1 до 100.</li>
+                <li>Вы должны угадать это число, вводя свои предположения.</li>
+                <li>После каждой попытки вам будет показано, больше или меньше загаданное число.</li>
+                <li>Игра продолжается до тех пор, пока вы не угадаете число.</li>
+                <li>После победы вам будет показано количество попыток, которое вы потратили.</li>
+            </ol>
+        </div>
+    
     <main>
      
     </main>
