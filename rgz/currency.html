@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс валют</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        h1 {
+            text-align: center;
+        }
+        .currency-converter {
+            width: 400px;
+            padding: 30px;
+            margin: 20px auto;
+            border: 3px solid #3498db;
+            box-shadow: 2px 5px 7px grey;
+            border-radius: 10px;
+            font-size: 20px;
+            background-color: #fff;
+        }
+
+        label, select, input, button {
+            margin-top: 20px;
+            display: block;
+        }
+
+        input, select, button {
+            width: 100%;
+            font-size: 15px;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #f20707;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3498db;
+        }
+
+        #exchange-rate {
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="index2.html">О компании</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="currency.html">Курс валют</a></li>
+                <li><a href="contacts.html">Контактные данные</a></li>
+                <li><a href="video.html">Видео</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="content">
+        <div style="text-align: center;">
+            <img src="../Logotype_RKS.jpg" width="200" height="100" style="display: inline-block;">
+          </div>
+        <header>
+            <h1>Курс валют</h1>
+        </header>
+
+        <main>
+            <div id="exchange-rate"></div>
+            <div class="converter">
+                <label>
+                    Рубли:
+                    <input type="number" id="rub-input" value="1">
+                </label>
+                <label>
+                    Турецкие лиры:
+                    <input type="number" id="try-input" value="">
+                </label>
+                <button id="convert-btn">Конвертировать</button>
+            </div>
+        </main>
+    </div>
+    <script>
+        const rubInput = document.getElementById('rub-input');
+        const tryInput = document.getElementById('try-input');
+        const convertBtn = document.getElementById('convert-btn');
+        const exchangeRateDiv = document.getElementById('exchange-rate');
+
+        let exchangeRate;
+
+        fetch('https://www.cbr-xml-daily.ru/daily_json.js')
+            .then(response => response.json())
+            .then(data => {
+                exchangeRate = data.Valute.TRY.Value;
+                exchangeRateDiv.textContent = `Курс турецкой лиры на сегодня: 1 TRY = ${exchangeRate.toFixed(2)} RUB`;
+            })
+            .catch(error => {
+                console.error('Ошибка при получении курса валют:', error);
+            });
+
+        convertBtn.addEventListener('click', () => {
+            const rubValue = parseFloat(rubInput.value);
+            const tryValue = parseFloat(tryInput.value);
+
+            if (isNaN(rubValue) && isNaN(tryValue)) {
+                rubInput.value = '';
+                tryInput.value = '';
+                return;
+            }
+
+            if (!isNaN(rubValue)) {
+                const convertedTryValue = (rubValue / exchangeRate).toFixed(2);
+                tryInput.value = convertedTryValue;
+            } else {
+                const convertedRubValue = (tryValue * exchangeRate).toFixed(2);
+                rubInput.value = convertedRubValue;
+            }
+        });
+    </script>
+</body>
+</html>

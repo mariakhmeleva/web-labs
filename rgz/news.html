@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: Arial, sans-serif;
+            margin-left: 100px;
+            margin-right: 100px;
+            line-height: 1.5;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .news {
+            text-align: center;
+            color: #333;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: oblique;
+            margin-left: 100px;
+            margin-right: 100px;
+            line-height: 1.5;
+        }
+        .news-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .news-card {
+            position: relative;
+            width: 50%;
+            border: 1px solid #ccc;
+            margin: 20px;
+            padding: 10px;
+
+            height: 200px; 
+        }
+        .news-title {
+            font-size: 15px;
+            color: #333;
+            text-align: justify;
+        }
+        .news-date {
+            font-size: 14px;
+            color: #666;
+            text-align: right;
+            margin-bottom: 5px;
+        }
+        .news-summary {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #070707;
+            text-align: justify;
+            overflow: hidden;
+            height: 100px;
+        }
+        .button {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            right: 20px;
+            padding: 10px;
+            text-align: center;
+            background-color: #f20707;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a:hover {
+        color: #f6f8fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="index2.html">О компании</a></li>
+            <li><a href="news.html">Новости</a></li>
+            <li><a href="currency.html">Курс валют</a></li>
+            <li><a href="contacts.html">Контактные данные</a></li>
+            <li><a href="video.html">Видео</a></li>
+        </ul>
+    </div>
+    <main>
+        <div style="text-align: center;">
+            <img src="../Logotype_RKS.jpg" width="200" height="100" style="display: inline-block;">
+        </div>
+        <h1>Новости </h1>
+        <div class="news-container">
+            <div class="news-card">
+                <div class="news-date">08.05.2024</div>
+                <div class="news-title">Представители водоканалов страны высоко оценили работу по модернизации ЦТП в Нижневартовске</div>
+                <div class="news-summary">На выездном совещании в Нижневартовске представители водоканалов из нескольких городов 
+                    присутствия «РКС – Холдинг» обсудили...</div>
+                <a href="https://ugra-tv.ru/news/zhkkh/predstaviteli_vodokanalov_strany_vysoko_otsenili_rabotu_po_modernizatsii_tstp_v_nizhnevartovske/" class="button">Показать</a>
+            </div>
+            <div class="news-card">
+                <div class="news-date">05.05.2024</div>
+                <div class="news-title">В Стерлитамаке коммунальные службы продолжают наводить чистоту на улицах ко Дню Победы</div>
+                <div class="news-summary">По информации пресс-службы администрации городского округа, ответственные за чистоту 
+                    и красоту города убирают мусор, очищают памятники...</div>
+                <a href="https://srgazeta.ru/articles/obshchestvo/2024-05-05/v-sterlitamake-kommunalnye-sluzhby-prodolzhayut-navodit-chistotu-na-ulitsah-ko-dnyu-pobedy-3754289" class="button">Показать</a>
+            </div>
+            <div class="news-card">
+                <div class="news-date">24.04.2024</div>
+                <div class="news-title">"Нижневартовские коммунальные системы" рассказали о планах на 2024 год</div>
+                <div class="news-summary">Центрально-тепловой пункт, канализационный коллектор у «Алеши» и Дворец 
+                    искусств — что связывает эти объекты?...</div>
+                <a href="https://samotlor.tv/ru/news-page/zhkh/nizhnevartovske-kommunalnye-sistemy-rasskazali-o-planakh-na-2024-god" class="button">Показать</a>
+            </div>
+            <div class="news-card">
+                <div class="news-date">24.04.2024</div>
+                <div class="news-title">В майские праздники Коммунальные системы Московской области переходят на усиленный 
+                    режим работы - МинЖКХ</div>
+                <div class="news-summary">В выходные и праздничные дни работа коммунальных служб продолжается в штатном 
+                    режиме, а порой вводятся дополнительные меры...</div>
+                <a href="https://stupinoadm.ru/novosti/detail/v-majskie-prazdniki-kommunalnye-sistemy-moskovskoj-oblasti-perekhodyat-na-usilennyj-rezhim-raboty-minzhkkh/" class="button">Показать</a>
+            </div>
+            <div class="news-card">
+                <div class="news-date">24.04.2024</div>
+                <div class="news-title">Выяснилось, как будут работать коммунальные службы Подмосковья на майские праздники</div>
+                <div class="news-summary">Впереди долгие выходные, и многие задаются вопросом – как будут работать городские 
+                    службы, помощь которых может потребоваться в любое время...</div>
+                <a href="https://regions.ru/obschestvo/vyyasnilos-kak-budut-rabotat-kommunalnye-sluzhby-podmoskovya-na-mayskie-prazdniki" class="button">Показать</a>
+            </div>
+            <div class="news-card">
+                <div class="news-date">19.04.2024</div>
+                <div class="news-title">Коммунальщики Нижневартовска подготовились к паводку</div>
+                <div class="news-summary">Коммунальщики готовятся к паводковому сезону. Метеорологи прогнозируют весенний
+                     подъём воды в Югре в пределах нормы...</div>
+                <a href="https://ugra-tv.ru/news/zhkkh/kommunalshchiki_nizhnevartovska_podgotovilis_k_pavodku/" class="button">Показать</a>
+            </div>
+            <div class="news-card">
+                <div class="news-date">09.05.2024</div>
+                <div class="news-title">Публичные слушания в новом формате провели «Нижневартовские коммунальные системы»</div>
+                <div class="news-summary">На слушаниях обсудили итоги за 2023 и перспективы на 2024 гг. Теоретическую часть 
+                    совместили с практической....</div>
+                <a href="https://nijnevartovsk.bezformata.com/listnews/novom-formate-proveli-nizhnevartovskie/130747795/" class="button">Показать</a>
+            </div>
+            <div class="news-card">
+                <div class="news-date">06.05.2024</div>
+                <div class="news-title">Замена тепловой сети ул. Ломоносова</div>
+                <div class="news-summary">6 мая бригада МУП "Коммунальные системы" работает у дома №12 по ул. Ломоносова. 
+                    Ведутся работы по замене трубопровода теплоснабжения диаметром 76 мм...</div>
+                <a href="https://35ks.ru/news/2840.html" class="button">Показать</a>
+            </div>
+            <div class="news-card">
+                <div class="news-date">25.04.2024</div>
+                <div class="news-title">МУП "Коммунальные системы"</div>
+                <div class="news-summary">МУП "Коммунальные системы" присоединилось к акции "Георгиевская лента"...</div>
+                <a href="https://35ks.ru/news/2833.html" class="button">Показать</a>
+            </div>
+            <div class="news-card">
+                <div class="news-date">18.04.2024</div>
+                <div class="news-title">Уважаемые жители!</div>
+                <div class="news-summary">В связи с аварийной ситуацией на трубопроводе горячего водоснабжения 
+                    18 апреля 2024 года до окончания производства работ отключено горячее водоснабжение по следующим адресам...</div>
+                <a href="https://35ks.ru/news/2829.html" class="button">Показать</a>
+            </div>
+            <div class="news-card">
+                <div class="news-date">08.04.2024</div>
+                <div class="news-title">В России предложили отказаться от бумажных платежек за ЖКУ</div>
+                <div class="news-summary">Электронные платежки за ЖКУ распространят на всю страну
+                     — россияне смогут отказаться от бумажного варианта, написав соответствующее заявление...</div>
+                <a href="https://iz.ru/1678559/2024-04-08/v-rossii-predlozhili-otkazatsia-ot-bumazhnykh-platezhek-za-zhku" class="button">Показать</a>
+            </div>
+            <div class="news-card">
+                <div class="news-date">28.02.2024</div>
+                <div class="news-title">Трубные решения: в России нашли способ снизить аварийность инфраструктуры ЖКХ</div>
+                <div class="news-summary">Какую меру предлагает бизнес для повышения прочности сетей...</div>
+                <a href="https://iz.ru/1672761/pavel-vikhrov/trubnye-resheniia-v-rossii-nashli-sposob-snizit-avariinost-infrastruktury-zhkkh" class="button">Показать</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
